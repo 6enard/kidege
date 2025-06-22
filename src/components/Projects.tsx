@@ -77,18 +77,18 @@ export default function Projects() {
   const project = projects[currentProject];
 
   return (
-    <section id="projects" className="py-20 bg-gray-900 text-white">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h3 className="text-4xl font-bold mb-4">Our Recent Projects</h3>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16">
+          <h3 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Our Recent Projects</h3>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             See the incredible transformations we've achieved for our clients. Every project showcases our commitment to excellence.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Image Showcase */}
-          <div className="relative">
+          <div className="relative order-2 lg:order-1">
             <div className="relative bg-gray-800 rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/3] relative">
                 <img 
@@ -96,8 +96,8 @@ export default function Projects() {
                   alt={`${project.title} - ${showBefore ? 'Before' : 'After'}`}
                   className="w-full h-full object-cover transition-opacity duration-500"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className={`px-4 py-2 rounded-full text-sm font-semibold ${
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                  <span className={`px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold ${
                     showBefore 
                       ? 'bg-red-500 text-white' 
                       : 'bg-green-500 text-white'
@@ -108,11 +108,11 @@ export default function Projects() {
               </div>
               
               {/* Before/After Toggle */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2">
                 <div className="bg-black/50 backdrop-blur-sm rounded-full p-1 flex">
                   <button
                     onClick={() => setShowBefore(true)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    className={`px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                       showBefore 
                         ? 'bg-white text-gray-900' 
                         : 'text-white hover:bg-white/20'
@@ -122,7 +122,7 @@ export default function Projects() {
                   </button>
                   <button
                     onClick={() => setShowBefore(false)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    className={`px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-colors ${
                       !showBefore 
                         ? 'bg-white text-gray-900' 
                         : 'text-white hover:bg-white/20'
@@ -135,12 +135,12 @@ export default function Projects() {
             </div>
 
             {/* Navigation */}
-            <div className="flex justify-between items-center mt-6">
+            <div className="flex justify-between items-center mt-4 sm:mt-6">
               <button
                 onClick={prevProject}
-                className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors"
+                className="bg-gray-800 hover:bg-gray-700 p-2 sm:p-3 rounded-full transition-colors"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
               
               <div className="flex space-x-2">
@@ -151,7 +151,7 @@ export default function Projects() {
                       setCurrentProject(index);
                       setShowBefore(true);
                     }}
-                    className={`w-3 h-3 rounded-full transition-colors ${
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors ${
                       index === currentProject ? 'bg-yellow-400' : 'bg-gray-600'
                     }`}
                   />
@@ -160,57 +160,57 @@ export default function Projects() {
               
               <button
                 onClick={nextProject}
-                className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-colors"
+                className="bg-gray-800 hover:bg-gray-700 p-2 sm:p-3 rounded-full transition-colors"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </div>
           </div>
 
           {/* Project Details */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
             <div>
               <div className="flex items-center space-x-2 mb-2">
-                <span className="bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
+                <span className="bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
                   {project.category}
                 </span>
               </div>
-              <h4 className="text-3xl font-bold mb-4">{project.title}</h4>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <h4 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">{project.title}</h4>
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
                 {project.description}
               </p>
             </div>
 
             {/* Project Info */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-gray-800 rounded-lg p-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="bg-gray-800 rounded-lg p-3 sm:p-4">
                 <div className="flex items-center space-x-2 mb-2">
-                  <Car className="w-5 h-5 text-yellow-400" />
-                  <span className="text-sm font-medium text-gray-400">Vehicle</span>
+                  <Car className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                  <span className="text-xs sm:text-sm font-medium text-gray-400">Vehicle</span>
                 </div>
-                <p className="font-semibold">{project.vehicleType}</p>
+                <p className="font-semibold text-sm sm:text-base">{project.vehicleType}</p>
               </div>
               
-              <div className="bg-gray-800 rounded-lg p-4">
+              <div className="bg-gray-800 rounded-lg p-3 sm:p-4">
                 <div className="flex items-center space-x-2 mb-2">
-                  <Calendar className="w-5 h-5 text-yellow-400" />
-                  <span className="text-sm font-medium text-gray-400">Completed</span>
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                  <span className="text-xs sm:text-sm font-medium text-gray-400">Completed</span>
                 </div>
-                <p className="font-semibold">{project.completionDate}</p>
+                <p className="font-semibold text-sm sm:text-base">{project.completionDate}</p>
               </div>
             </div>
 
             {/* Services Used */}
             <div>
               <div className="flex items-center space-x-2 mb-3">
-                <Wrench className="w-5 h-5 text-yellow-400" />
-                <span className="font-semibold">Services Applied</span>
+                <Wrench className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                <span className="font-semibold text-sm sm:text-base">Services Applied</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {project.services.map((service, index) => (
                   <span
                     key={index}
-                    className="bg-blue-800 text-blue-100 px-3 py-1 rounded-full text-sm"
+                    className="bg-blue-800 text-blue-100 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm"
                   >
                     {service}
                   </span>
@@ -219,10 +219,10 @@ export default function Projects() {
             </div>
 
             {/* CTA */}
-            <div className="pt-4">
+            <div className="pt-2 sm:pt-4">
               <a 
                 href="tel:+254702555075"
-                className="bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors inline-block"
+                className="bg-yellow-500 text-gray-900 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-yellow-400 transition-colors inline-block w-full sm:w-auto text-center"
               >
                 Get Your Quote Today
               </a>

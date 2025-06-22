@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsAppFloat from './components/WhatsAppFloat';
 
 function App() {
   const scrollToSection = (sectionId: string) => {
@@ -21,6 +22,7 @@ function App() {
       <About />
       <Contact />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

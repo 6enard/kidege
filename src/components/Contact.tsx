@@ -312,14 +312,8 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="text-center">
-              <a 
-                href="tel:+254702555075"
-                className="bg-yellow-500 text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-yellow-400 transition-colors shadow-lg inline-block w-full sm:w-auto"
-              >
-                Call Now for Immediate Help
-              </a>
-            </div>
+
+           
 
             {/* Google Maps */}
             <div className="bg-gray-800 rounded-xl p-4 sm:p-6">
